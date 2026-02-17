@@ -1,0 +1,152 @@
+[
+  {
+    "model": "api.project",
+    "pk": 1,
+    "fields": {
+      "title": "E-commerce Inteligente con IA",
+      "slug": "ecommerce-ia",
+      "description": "Plataforma de e-commerce con recomendaciones de IA y análisis en tiempo real",
+      "long_description": "Desarrollé una plataforma de e-commerce completa usando Django REST Framework + React + PostgreSQL. Implementé:\n\n• Sistema de recomendaciones con ML (colaborativo + contenido)\n• Análisis de comportamiento en tiempo real\n• Dashboard de ventas con gráficos interactivos\n• Integración con Stripe para pagos\n• Admin panel personalizado\n\nResultados:\n- Incremento del 45% en conversión\n- Tiempo de carga < 2s\n- Procesamiento de 10k transacciones/día",
+      "stack": ["django", "react", "postgresql", "machine-learning"],
+      "technologies": "Django, React, PostgreSQL, scikit-learn, Redis, Stripe",
+      "status": "prod",
+      "featured": true,
+      "demo_url": "https://demo-ecommerce.example.com",
+      "repo_url": "https://github.com/user/ecommerce-ia",
+      "docs_url": "https://docs.example.com/ecommerce",
+      "github_stars": 245,
+      "published_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 2,
+    "fields": {
+      "title": "API Gateway con Rate Limiting",
+      "slug": "api-gateway",
+      "description": "Gateway escalable con autenticación, rate limiting y analytics",
+      "long_description": "API Gateway profesional para gestionar múltiples servicios.\n\n• Autenticación OAuth2 + JWT\n• Rate limiting adaptativo\n• Circuit breaker y retry logic\n• Analytics y monitoring\n• GraphQL support\n\nProcessa 100k+ requests/día con 99.9% uptime",
+      "stack": ["fastapi", "nodejs", "redis", "devops"],
+      "technologies": "FastAPI, Node.js, Redis, Kubernetes, Prometheus",
+      "status": "prod",
+      "featured": true,
+      "demo_url": "https://api-gateway.example.com/docs",
+      "repo_url": "https://github.com/user/api-gateway",
+      "github_stars": 512,
+      "published_at": "2024-02-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 3,
+    "fields": {
+      "title": "CMS Headless con GraphQL",
+      "slug": "cms-headless",
+      "description": "CMS moderno sin frontend acoplado, con GraphQL API",
+      "long_description": "Sistema de gestión de contenidos desacoplado.\n\n• Editor visual intuitivo\n• GraphQL API + REST fallback\n• Versionado de contenido\n• Workflows de publicación\n• Webhooks para integraciones\n\nUsado por 50+ clientes con 1M+ documentos publicados",
+      "stack": ["nodejs", "react", "mongodb", "graphql"],
+      "technologies": "Node.js, React, MongoDB, GraphQL, Elasticsearch",
+      "status": "prod",
+      "featured": true,
+      "demo_url": "https://cms-demo.example.com",
+      "repo_url": "https://github.com/user/cms-headless",
+      "github_stars": 891,
+      "published_at": "2024-01-20T10:00:00Z"
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 4,
+    "fields": {
+      "title": "App Móvil de Delivery en Tiempo Real",
+      "slug": "app-delivery-realtime",
+      "description": "Aplicación móvil con rastreo en tiempo real y push notifications",
+      "long_description": "App completa de delivery con GPS, notificaciones y pagos.\n\n• Rastreo GPS en vivo\n• Notificaciones push\n• Integración con múltiples métodos de pago\n• Ratings y reviews\n• Reportes de ingresos\n\n50k+ descargas, rating 4.8/5",
+      "stack": ["react", "nodejs", "mongodb", "devops"],
+      "technologies": "React Native, Node.js, MongoDB, Socket.io, Firebase",
+      "status": "demo",
+      "featured": false,
+      "demo_url": "https://app-demo.example.com",
+      "repo_url": "https://github.com/user/app-delivery",
+      "github_stars": 156,
+      "published_at": "2023-12-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 5,
+    "fields": {
+      "title": "Plataforma SaaS de Analytics",
+      "slug": "saas-analytics",
+      "description": "SaaS de analytics alternativa a Google Analytics enfocada en privacidad",
+      "long_description": "Plataforma B2B SaaS de analytics.\n\n• Cumplimiento GDPR/CCPA\n• Dashboards personalizables\n• Real-time reporting\n• Integración con cualquier sitio\n• Datos de 1000+ websites\n\n300+ clientes activos con MRR estable",
+      "stack": ["django", "react", "postgresql", "devops"],
+      "technologies": "Django, React, PostgreSQL, ClickHouse, Kafka",
+      "status": "prod",
+      "featured": false,
+      "demo_url": "https://analytics-demo.example.com",
+      "repo_url": "https://github.com/user/saas-analytics",
+      "github_stars": 234,
+      "published_at": "2024-01-05T10:00:00Z"
+    }
+  },
+  {
+    "model": "api.project",
+    "pk": 6,
+    "fields": {
+      "title": "Linter de Seguridad para Python",
+      "slug": "python-security-linter",
+      "description": "Herramienta CLI que detecta vulnerabilidades comunes en código Python",
+      "long_description": "Linter especializado en seguridad para Python.\n\n• Detección de 100+ patrones inseguros\n• Integración CI/CD\n• Custom rules\n• JSON reports\n• 50k+ downloads/mes\n\nRecomendado por OWASPy PyPA",
+      "stack": ["python", "devops"],
+      "technologies": "Python, AST parsing, YAML config",
+      "status": "prod",
+      "featured": false,
+      "demo_url": "https://replit.com/@user/python-security",
+      "repo_url": "https://github.com/user/python-security-linter",
+      "github_stars": 1240,
+      "published_at": "2023-11-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "api.casestudy",
+    "pk": 1,
+    "fields": {
+      "title": "Cómo Escalé un MVP a 100k Usuarios en 6 Meses",
+      "slug": "case-study-scaling-mvp",
+      "description": "De un MVP en Heroku a una arquitectura profesional con Kubernetes",
+      "problem": "El cliente tenía un MVP en Heroku que colapsaba con 10k usuarios concurrentes. Base de datos no optimizada, sin caché, frontend+backend acoplados.",
+      "solution": "1. Separé frontend (React+Vite) del backend (Django DRF)\n2. Migré a PostgreSQL con optimizaciones de índices\n3. Implementé Redis para caché y sessions\n4. Containericé con Docker y desplegué en Kubernetes en AWS\n5. Setup de CI/CD con GitHub Actions\n6. Agregué monitoring con Prometheus + Grafana",
+      "results": "• Reducción del 70% en latencia p99\n• Escaló a 100k usuarios con 2GB RAM por pod\n• Downtime de 0% en último trimestre\n• Tiempo de deployment: de 1h a 5 minutos\n• Costo/usuario: 85% menos",
+      "metrics": {
+        "latency_improvement": "70%",
+        "cost_reduction": "85%",
+        "users_supported": "100000",
+        "uptime": "99.9%",
+        "deployment_time": "5m"
+      },
+      "tech_stack": ["django", "react", "kubernetes", "postgresql", "redis"],
+      "published_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "api.casestudy",
+    "pk": 2,
+    "fields": {
+      "title": "Implementación de Machine Learning en Plataforma Existente",
+      "slug": "case-study-ml-integration",
+      "description": "Integración de recomendaciones con ML sin romper la arquitectura existente",
+      "problem": "Cliente con plataforma de 5 años tenía bajo engagement. Usuarios no encontraban productos relevantes. Sistema monolítico difícil de extender.",
+      "solution": "1. Diseñé un servicio de ML desacoplado con FastAPI\n2. Implementé modelo colaborativo (implicit feedback)\n3. Background jobs con Celery para entrenar mensualmente\n4. Cache con Redis para predicciones\n5. A/B testing con feature flags\n6. Gradual rollout: 10% → 50% → 100%",
+      "results": "• CTR +35% en feed\n• AOV +22% (average order value)\n• Tiempo a implementación: 8 semanas\n• No requirió refactoring del core\n• 2 devs part-time suficiente",
+      "metrics": {
+        "ctr_improvement": "+35%",
+        "aov_improvement": "+22%",
+        "engagement_improvement": "+28%",
+        "implementation_time": "8 weeks"
+      },
+      "tech_stack": ["django", "fastapi", "scikit-learn", "redis", "celery"],
+      "published_at": "2024-02-05T10:00:00Z"
+    }
+  }
+]

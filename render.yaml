@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: portfolio
+    plan: starter
+    buildCommand: bash build.sh
+    startCommand: cd backend && gunicorn portfolio.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DEBUG
+        value: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: portfolio-app.onrender.com
+      - key: DATABASE_URL
+        fromDatabase:
+          name: portfolio-db
+          property: connectionString
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://portfolio-app.onrender.com
+      - key: FRONTEND_URL
+        value: https://portfolio-app.onrender.com
+
+databases:
+  - name: portfolio-db
+    plan: starter
+    version: '15'
+
+envVarGroups:
+  - name: Production
+    envVars:
+      - key: EMAIL_BACKEND
+        value: django.core.mail.backends.smtp.EmailBackend
+      - key: EMAIL_HOST
+        value: smtp.gmail.com
+      - key: EMAIL_PORT
+        value: '587'
