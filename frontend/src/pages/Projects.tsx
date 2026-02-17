@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState, FC } from 'react'
 import { Link } from 'react-router-dom'
 import { getProjects } from '../lib/apiClient'
+import type { Project } from '../lib/apiClient'
 import { trackPageView, trackClick } from '../lib/analytics'
-import { ArrowRight } from 'lucide-react'
 
-export default function Projects() {
-  const [projects, setProjects] = useState([])
+const Projects: FC = () => {
+  const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState('all')
 
@@ -25,7 +25,7 @@ export default function Projects() {
     }
   }
 
-  const filtered = filter === 'all' ? projects : projects.filter(p => p.status === filter)
+  const filtered = filter === 'all' ? projects : projects.filter((p) => p.status === filter)
 
   return (
     <div className="py-12">
@@ -90,3 +90,5 @@ export default function Projects() {
     </div>
   )
 }
+
+export default Projects

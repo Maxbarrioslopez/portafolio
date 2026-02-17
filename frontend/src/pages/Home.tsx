@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useState } from "react"
+import { FC, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { ArrowRight, Github, Mail } from "lucide-react"
+import { ArrowRight, Github } from "lucide-react"
 
 // Types
 import type { Project } from "../lib/apiClient"

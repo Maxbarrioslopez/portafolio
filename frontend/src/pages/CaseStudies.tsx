@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState, FC } from 'react'
 import { getCaseStudies } from '../lib/apiClient'
+import type { CaseStudy } from '../lib/apiClient'
 import { trackPageView, trackClick } from '../lib/analytics'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
 
-export default function CaseStudies() {
-  const [studies, setStudies] = useState([])
+const CaseStudies: FC = () => {
+  const [studies, setStudies] = useState<CaseStudy[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -67,7 +67,6 @@ export default function CaseStudies() {
 
               <div className="text-purple-600 font-medium flex items-center">
                 Leer completo
-                <ArrowRight size={16} className="ml-2" />
               </div>
             </Link>
           ))}
@@ -76,3 +75,5 @@ export default function CaseStudies() {
     </div>
   )
 }
+
+export default CaseStudies

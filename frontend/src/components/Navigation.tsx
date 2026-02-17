@@ -1,6 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { Github, Mail, MessageCircle, Menu, X } from 'lucide-react'
+import { Github, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Navigation() {
