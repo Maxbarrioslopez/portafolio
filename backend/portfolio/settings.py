@@ -30,18 +30,25 @@ if DEBUG := config("DEBUG", default="False").lower() == "true":
 
 DEBUG = config("DEBUG", default="False").lower() == "true"
 
-# Hosts
+# Hosts - Render uses .onrender.com, support wildcard domains
 ALLOWED_HOSTS_STR = config("ALLOWED_HOSTS", default="localhost,127.0.0.1")
+# Parse ALLOWED_HOSTS: supports wildcards like .onrender.com
 ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS_STR.split(",") if host.strip()]
+# Add env hostname if running on Render
+if os.environ.get("RENDER_EXTERNAL_HOSTNAME"):
+    ALLOWED_HOSTS.append(os.environ.get("RENDER_EXTERNAL_HOSTNAME"))
 
 # CORS & CSRF Configuration
 CORS_ALLOWED_ORIGINS_STR = config(
     "CORS_ALLOWED_ORIGINS",
-    default="http://localhost:5173,http://localhost:3000" if DEBUG else "https://yourdomain.com",
+    default="http://localhost:5173,http://localhost:3000" if DEBUG else "https://*.onrender.com",
 )
 CORS_ALLOWED_ORIGINS = [
     origin.strip() for origin in CORS_ALLOWED_ORIGINS_STR.split(",") if origin.strip()
 ]
+# Add Render hostname if available
+if os.environ.get("RENDER_EXTERNAL_HOSTNAME"):
+    CORS_ALLOWED_ORIGINS.append(f"https://{os.environ.get('RENDER_EXTERNAL_HOSTNAME')}")
 CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
 
 # Security Headers (HTTPS/HSTS only in production)
@@ -110,27 +117,16 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 
 # Database Configuration
 # ✅ Render uses DATABASE_URL automatically
-# ✅ Fallback to manual config for local development
+# ✅ Fallback to SQLite for local development
 if os.environ.get("DATABASE_URL"):
-    try:
-        import dj_database_url
-        DATABASES = {"default": dj_database_url.config(conn_max_age=600)}
-    except ImportError:
-        raise ImportError(
-            "dj-database-url required for DATABASE_URL. Install: pip install dj-database-url"
-        )
+    import dj_database_url
+    DATABASES = {"default": dj_database_url.config(conn_max_age=600, conn_health_checks=True)}
 else:
-    # Local development: SQLite by default, can override with env vars
+    # Local development: SQLite by default
     DATABASES = {
         "default": {
-            "ENGINE": config(
-                "DB_ENGINE", default="django.db.backends.sqlite3"
-            ),
-            "NAME": config("DB_NAME", default=str(BASE_DIR / "db.sqlite3")),
-            "USER": config("DB_USER", default=""),
-            "PASSWORD": config("DB_PASSWORD", default=""),
-            "HOST": config("DB_HOST", default=""),
-            "PORT": config("DB_PORT", default=""),
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
         }
     }
 
